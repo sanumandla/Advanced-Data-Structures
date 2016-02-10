@@ -107,16 +107,16 @@ public class MapNode implements Comparable<MapNode> {
 	}
 	
 	// This is for Dijkstra
-	@Override
-	public int compareTo(MapNode o) {
-		return ((Double) this.originalDistance).compareTo(o.getOriginalDistance());		
-	}
-
-	// This is for AStarSearch
 //	@Override
 //	public int compareTo(MapNode o) {
-//		return ((Double) (this.originalDistance + this.predictedDistace))
-//				.compareTo(o.getOriginalDistance() + o.getPredictedDistace());		
+//		return ((Double) this.originalDistance).compareTo(o.getOriginalDistance());		
 //	}
+
+	// This is for AStarSearch
+	@Override
+	public int compareTo(MapNode o) {
+		return ((Double) (this.originalDistance + this.predictedDistace))
+				.compareTo(o.getOriginalDistance() + o.getPredictedDistace());		
+	}
 		
 }
